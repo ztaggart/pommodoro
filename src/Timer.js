@@ -7,7 +7,6 @@ function Timer() {
     let timeout = null;
 
     timer();
-    decideBreak();
   
     function timer() {
         if (going === true) {
