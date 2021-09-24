@@ -1,9 +1,6 @@
 function ButtonArray(props) {
     const {startClick, stopClick, resetClick} = props;
   
-    
-  
-  
     return (
       <div>
         <button onClick={startClick}>Start</button>

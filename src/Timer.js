@@ -5,39 +5,29 @@ function Timer() {
     const [going, setGoing] = useState(false);
   
     let timeout = null;
+
+    timer();
+    decideBreak();
   
-    /*setTimeout(
-      () => {
-        increment(time + 1)
-      }, 1000
-    )*/
-    test();
-  
-    function test() {
-      if(going == true) {
-        timeout = setTimeout(() => {setTime(time+1)}, 1000);
-        console.log("timeoutID: " + timeout);
-      }
+    function timer() {
+        if (going === true) {
+            timeout = setTimeout(() => {setTime(time+1)}, 100);
+        }
     }
-    
   
     const startClick = () => {
       setGoing(true);
-      console.log("start " + time + " " + going);
     }
   
     const stopClick = () => {
       setGoing(false);
-      console.log("timeout is: " + timeout);
       clearTimeout(timeout);
-      console.log("stop " + time + " " + going);
       
     }
   
     const resetClick = () => {
       setGoing(false);
       setTime(0);
-      console.log("reset " + time + " " + going);
     }
   
     return (
@@ -45,9 +35,9 @@ function Timer() {
         <p>
             Time:
             <br></br>
-            {Math.floor(time)} s
-            <ButtonArray startClick={startClick} stopClick={stopClick} resetClick={resetClick}></ButtonArray>
+            {Math.floor(time/60)} m, {time%60} s
         </p>
+        <ButtonArray startClick={startClick} stopClick={stopClick} resetClick={resetClick}></ButtonArray>
       </div>
     )
   
