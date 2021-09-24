@@ -3,14 +3,12 @@ import ButtonArray from './ButtonArray.js'
 function Timer() {
     const [time, setTime] = useState(0);
     const [going, setGoing] = useState(false);
-  
-    let timeout = null;
 
     timer();
   
     function timer() {
         if (going === true) {
-            timeout = setTimeout(() => {setTime(time+1)}, 100);
+            setTimeout(() => {setTime(time+1)}, 100);
         }
     }
   
@@ -20,8 +18,6 @@ function Timer() {
   
     const stopClick = () => {
       setGoing(false);
-      clearTimeout(timeout);
-      
     }
   
     const resetClick = () => {
