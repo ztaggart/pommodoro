@@ -1,14 +1,8 @@
 import './App.css';
 import Timer from './Timer.js'
-import React, {useState} from 'react'
+import React from 'react'
 
 function App() {
-  const [time, increment] = useState(0);
-
-  setTimeout(
-    () => increment(time+1), 
-    1000
-  )
 
   return (
     <div className="App">
