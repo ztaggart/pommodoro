@@ -2,9 +2,9 @@
 This is a customizable Pomodoro Timer created primarily using React.js and Node.
 
 If you don't know what a pomodoro timer is or what it's used for, a pomodoro timer is a timer that typically runs for 25 minutes at a time with a 5 minute break in between. Then, after four 25 minute runs, the break is extended to 15-30 minutes. This is based on the pomodoro technique that states that this promotes efficiency by giving small breaks in between working. For more information, here are some links:
-           * https://todoist.com/productivity-methods/pomodoro-technique
-           * https://science.nichd.nih.gov/confluence/display/newsletter/2020/05/07/The+Pomodoro+Technique%3A+An+Effective+Time+Management+Tool
-           * https://en.wikipedia.org/wiki/Pomodoro_Technique
+           https://todoist.com/productivity-methods/pomodoro-technique
+           https://science.nichd.nih.gov/confluence/display/newsletter/2020/05/07/The+Pomodoro+Technique%3A+An+Effective+Time+Management+Tool
+           https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 I've found that this configuration works well for smaller tasks, like cleaning or studying flashcards, but not for longer tasks that can't be broken up as easily. Also, other people might find other configurations more effective. So, I made this timer configurable.
 
