@@ -1,0 +1,35 @@
+Alpha 1.1 Basic timer functionality:
+    Incremental timer by second, start, pause, and reset button.
+
+Alpha 1.2 Add "timer goal":
+    Timer stops when an inputted time is reached.
+
+---- Currrent release ---- 
+ 
+Alpha 1.3 Timer after goal:
+    Another timer starts after goal has been reached.
+
+Alpha 1.4 Repeating timers after goal:
+    Alternate two different timers after two different goals have been reached.
+
+Alpha 1.5 Big break timer:
+    Large break timer after first timer runs 4 times and the second timer runs after 3 times.
+
+Beta 1.1 Customize timing:
+    All 3 timers have customizable lengths:
+        Work timer, small break, big break
+
+Release 1.0 Make it look good:
+    pretty
+
+Release 1.1 Custom cycle number:
+    Customizable number of small breaks before big break
+        Default is 3 small before 1 big, allow 4 before 1, 2 before 1, etc.
+
+Release 1.2 Customizable theme
+
+
+
+Maybe features?
+    Random facts shown in breaks
+    On pausing the timer, show popup for the 'Inform, Negotiate, Schedule, Call back' strategy
