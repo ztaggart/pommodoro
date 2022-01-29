@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 const GoalForm = (props) => {
     const[tempMin, setTempMin] = useState(0);
-    const[tempSec, setTempSec] = useState(0);
+    const[tempSec, setTempSec] = useState(5);
 
-    let {goal, setGoal} = props;
+    let {setGoal} = props;
 
     const submitForm = (event) => {
         // prevent default form submission behavior
@@ -39,7 +39,6 @@ const GoalForm = (props) => {
     
     return(
         <div>
-          Current Goal is: {goal} seconds.
           <form onSubmit={submitForm} style={{fontSize: '20px', display: 'block'}}>
               <div id='submitDiv'>
                 <input id='txtSubmitMinutes' className='timeTxt' onChange={changeMinutes} value={tempMin}/>

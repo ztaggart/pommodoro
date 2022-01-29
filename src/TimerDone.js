@@ -1,9 +1,12 @@
 import React from 'react';
 
 const TimerDone = (props) => {
-    const done = props.done;
-    if(done) {
-        return <h1>The Timer has finished!</h1>
+    const {done1, done2} = props;
+    
+    if(done1) {
+        return <h1>Timer1 has finished!</h1>
+    } else if(done2) {
+        return <h1>Timer2 has finished!</h1>
     } else {
         return null;
     }
