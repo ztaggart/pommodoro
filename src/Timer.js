@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import ButtonArray from './ButtonArray.js'
-import TimerDone from './TimerDone.js'
 import GoalForm from './GoalForm.js'
 import './Timer.css'
 
@@ -11,18 +10,8 @@ function Timer() {
     const [time, setTime] = useState(0);
     const [going, setGoing] = useState(false);
 
-    //console.log(goals[goals[0]])
-    //console.log("current goal index: " + goals[0])
-    //changeGoals();
-    //timer();
-
-
     useEffect(
       () => { 
-        /*if (going === true) {
-          setTimeout(() => {setTime(time+1)}, 1000);
-        }*/
-        timer();
         changeGoals();
       }
     )
@@ -37,7 +26,7 @@ function Timer() {
 
         //go to next timer goal
         goals[0] = ((goals[0] + 1) % goals.length); // (2+1) % 3 == 0
-        if(goals[0] == 0) {
+        if(goals[0] === 0) {
           goals[0]+=1;
         }
         setTime(0);
@@ -45,10 +34,6 @@ function Timer() {
       else if (going === true) {
         setTimeout(() => {setTime(time+1)}, 1000);
       }
-    }
-
-    function timer() {
-      
     }
 
     const startClick = () => {
@@ -74,7 +59,6 @@ function Timer() {
   
     return (
       <div>
-        {/*<TimerDone done1={done1} done2={done2}/>*/}
         <p>
             Time:
             <br></br>
