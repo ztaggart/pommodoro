@@ -10,10 +10,10 @@ Alpha 1.3 Timer after goal:
 Alpha 1.4 Repeating timers after goal:
     Alternate two different timers after two different goals have been reached.
 
----- Currrent release ---- 
-
 Alpha 1.5 Big break timer:
     Large break timer after first timer runs 4 times and the second timer runs after 3 times.
+
+---- Currrent release ---- 
 
 Beta 1.1 Customize timing:
     All 3 timers have customizable lengths:
