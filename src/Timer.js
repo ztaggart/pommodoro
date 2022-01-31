@@ -6,12 +6,16 @@ import './Timer.css'
 function Timer() {
     // first number in array is the current goal, 1 indexed
     // e.g. the first goal has an index of 1 in this array
-    const [goals, setGoals] = useState([1, 5, 10]);
+    const WORK = 3;
+    const SHORT_BREAK = 2;
+    const LONG_BREAK = 10;
+    const [breakCount, setBreakCount] = useState(0);
+    const [goals, setGoals] = useState([1, WORK, SHORT_BREAK, LONG_BREAK]);
     const [time, setTime] = useState(0);
     const [going, setGoing] = useState(false);
 
     useEffect(
-      () => { 
+      () => {
         changeGoals();
       }
     )
@@ -19,17 +23,24 @@ function Timer() {
     
     function changeGoals() {
       let goal = goals[goals[0]];
-      console.log("goal is: " + goal);
+      console.log(goals[0])
+      if (breakCount >= 4) {
+        goals[0] = 3;
+        setBreakCount(0);
+      }
       if(time > goal && goal !== 0) {
-
-        //TODO: maybe could put an alarm here instead of switching to the next timer?
-
+        //TODO: maybe could put an alarm here when switching to the next timer?
+        
         //go to next timer goal
-        goals[0] = ((goals[0] + 1) % goals.length); // (2+1) % 3 == 0
-        if(goals[0] === 0) {
+        goals[0] = ((goals[0] + 1) % (goals.length - 1));
+        console.log("goal index: " + goals[0])
+        if(goals[0] === 0) { // skip metadata for goal index
           goals[0]+=1;
         }
-        setTime(0);
+        if(goals[0] === 2) { // if a break, increment break counter
+          setBreakCount(breakCount + 1);
+        }
+        setTime(1);
       }
       else if (going === true) {
         setTimeout(() => {setTime(time+1)}, 1000);
@@ -51,10 +62,8 @@ function Timer() {
     }
     
     const setGoal = (goal) => {
-      console.log(goals[goals[0]])
       goals[goals[0]] = goal;
       setGoals(goals);
-      console.log(goals);
     }
   
     return (
