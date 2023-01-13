@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import ReactPropTypes from "react";
+import PropTypes from "prop-types";
 
 function Timer({ time, startClick, stopClick, resetClick, going }) {
   function format(time) {
@@ -37,10 +37,10 @@ function Timer({ time, startClick, stopClick, resetClick, going }) {
 }
 
 Timer.propTypes = {
-  time: ReactPropTypes.number,
-  startClick: ReactPropTypes.function,
-  stopClick: ReactPropTypes.function,
-  resetClick: ReactPropTypes.function,
-  going: ReactPropTypes.boolean,
+  time: PropTypes.number,
+  startClick: PropTypes.func,
+  stopClick: PropTypes.func,
+  resetClick: PropTypes.func,
+  going: PropTypes.bool,
 };
 export default Timer;
