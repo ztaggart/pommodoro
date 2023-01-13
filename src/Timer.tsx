@@ -1,16 +1,18 @@
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import "./index.css";
-import Timer from "./Timer.js";
-import React, { useState, useEffect } from "react";
 
-function App() {
-  const WORK = 4;
-  const SHORT_BREAK = 2;
-  const LONG_BREAK = 10;
-
+function Timer({goals, setGoals}: {goals: number[], setGoals: Dispatch<SetStateAction<number[]>>}) {
   const [breakCount, setBreakCount] = useState(0);
-  const [goals, setGoals] = useState([1, WORK, SHORT_BREAK, LONG_BREAK]);
-  const [time, setTime] = useState(0); // in ms
+  const [time, setTime] = useState(0);
   const [going, setGoing] = useState(false);
+
+  function format(time: number) {
+    if (time < 10) {
+      return "0" + time.toString();
+    } else {
+      return time;
+    }
+  }
 
   useEffect(() => {
     changeGoals();
@@ -48,16 +50,6 @@ function App() {
     }
   }
 
-  const setGoal = (goal, index) => {
-    if (index <= 0 || index > goals.length()) {
-      console.log("bad index in setGoal");
-      return;
-    }
-
-    goals[index] = goal;
-    setGoals(goals);
-  };
-
   const startClick = () => {
     setGoing(true);
   };
@@ -69,20 +61,22 @@ function App() {
   const resetClick = () => {
     setGoing(false);
     setTime(0);
-    goals[0] = 1;
+    goals[0] = 1; // TODO: huh?
   };
 
   return (
-    <div className="app">
-      <Timer
-        time={time}
-        startClick={startClick}
-        stopClick={stopClick}
-        resetClick={resetClick}
-        breakCount={breakCount}
-        going={going}
-      ></Timer>
+    <div className="timer">
+      <div style={{ height: "10%", margin: "100px" }}>
+        <p style={{ fontSize: "70px" }}>
+          {format(Math.floor(time / 60))}:{format(time % 60)}
+        </p>
+      </div>
+      <div>
+        <button onClick={startClick}>Start</button>
+        <button onClick={stopClick}>Stop</button>
+        <button onClick={resetClick}>Reset</button>
+      </div>
     </div>
   );
 }
-export default App;
+export default Timer;
