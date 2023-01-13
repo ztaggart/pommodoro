@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import ReactPropTypes from "react";
 
-function Timer({ time, startClick, stopClick, resetClick }) {
+function Timer({ time, startClick, stopClick, resetClick, going }) {
   function format(time) {
     if (time < 10) {
       return "0" + time.toString();
@@ -10,6 +10,16 @@ function Timer({ time, startClick, stopClick, resetClick }) {
       return time;
     }
   }
+
+  function startStopClick() {
+    if (going) {
+      stopClick();
+    } else {
+      startClick();
+    }
+  }
+
+  const startStop = going ? "Stop" : "Start";
 
   return (
     <div className="timer">
@@ -19,8 +29,7 @@ function Timer({ time, startClick, stopClick, resetClick }) {
         </p>
       </div>
       <div>
-        <button onClick={startClick}>Start</button>
-        <button onClick={stopClick}>Stop</button>
+        <button onClick={startStopClick}>{startStop}</button>
         <button onClick={resetClick}>Reset</button>
       </div>
     </div>
@@ -32,5 +41,6 @@ Timer.propTypes = {
   startClick: ReactPropTypes.function,
   stopClick: ReactPropTypes.function,
   resetClick: ReactPropTypes.function,
+  going: ReactPropTypes.boolean,
 };
 export default Timer;
