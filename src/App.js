@@ -3,13 +3,13 @@ import Timer from "./Timer.js";
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const WORK = 3;
+  const WORK = 4;
   const SHORT_BREAK = 2;
   const LONG_BREAK = 10;
 
   const [breakCount, setBreakCount] = useState(0);
   const [goals, setGoals] = useState([1, WORK, SHORT_BREAK, LONG_BREAK]);
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(0); // in ms
   const [going, setGoing] = useState(false);
 
   useEffect(() => {
@@ -80,6 +80,7 @@ function App() {
         stopClick={stopClick}
         resetClick={resetClick}
         breakCount={breakCount}
+        going={going}
       ></Timer>
     </div>
   );

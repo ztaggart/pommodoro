@@ -3,12 +3,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .timer {
-  background-color:rgb(85, 8, 228);
+  background-color: rgb(85, 8, 228);
   text-align: center;
   width: 50vh;
   height: 35%;
@@ -19,6 +19,6 @@ code {
   background-color: black;
   display: flex;
   height: 100vh;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
