@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
+import './index.css';
 
-const GoalForm = (props) => {
+const GoalForm = ({setGoal}) => {
     const[tempMin, setTempMin] = useState(0);
     const[tempSec, setTempSec] = useState(5);
 
-    let {setGoal} = props;
 
     const submitForm = (event) => {
         // prevent default form submission behavior
@@ -39,14 +39,18 @@ const GoalForm = (props) => {
     
     return(
         <div>
-          <form onSubmit={submitForm} style={{fontSize: '20px', display: 'block'}}>
+          <form onSubmit={submitForm} class='goal_container'>
               <div id='submitDiv'>
-                <input id='txtSubmitMinutes' className='timeTxt' onChange={changeMinutes} value={tempMin}/>
+                <input class='goal_input' onChange={changeMinutes} value={tempMin}/>
                 <label style={{marginRight: '15px'}}> minutes </label>
+              </div>
+              <div id='submitDiv'>
                 <input id='txtSubmitSeconds' className='timeTxt' onChange={changeSeconds} value={tempSec}/>
                 <label> seconds </label>
               </div>
-              <button id='btnSubmitTime' type='submit' style={{fontSize: '20px', color: '#282c34', marginTop: '10px'}}> Submit </button>
+              <div>
+                <button id='btnSubmitTime' type='submit' style={{alignContent: 'center', fontSize: '20px', marginTop: '10px', marginLeft: '35%'}}> Submit </button>
+              </div>
           </form>
         </div>
     )
